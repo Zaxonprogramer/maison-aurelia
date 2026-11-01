@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Maison Aurelia</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="intro">
+        <div class="restaurant-sketch" aria-hidden="true">
+            <svg viewBox="0 0 1000 500" role="presentation">
+                <g class="building-lines">
+                    <path d="M120 410 H880" />
+                    <path d="M210 410 V190 H790 V410" />
+                    <path d="M180 190 H820" />
+                    <path d="M160 190 L500 75 L840 190" />
+                    <path d="M445 410 V275 H555 V410" />
+                    <path d="M500 275 V410" />
+                    <path d="M270 250 H385 V345 H270 Z" />
+                    <path d="M327.5 250 V345" />
+                    <path d="M615 250 H730 V345 H615 Z" />
+                    <path d="M672.5 250 V345" />
+                    <path d="M235 215 H765" />
+                    <path d="M190 410 H810" />
+                </g>
+            </svg>
+        </div>
+
+        <div class="intro-content">
+            <p class="intro-small">FINE DINING</p>
+            <h1 class="intro-title">MAISON AURELIA</h1>
+            <div class="intro-line"></div>
+            <p class="intro-location">LUXEMBOURG</p>
+        </div>
+    </div>
+
+    <main id="website">
+        <section class="hero">
+            <nav>
+                <div class="logo">MAISON AURELIA</div>
+
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#menu">Menu</a>
+                    <a href="#experience">Experience</a>
+                    <a href="#contact">Contact</a>
+                </div>
+
+                <button class="reserve-btn reservation-trigger" type="button">
+                    Reserve a Table
+                </button>
+
+                <button
+                    class="mobile-menu-toggle"
+                    type="button"
+                    aria-label="Open navigation"
+                    aria-expanded="false"
+                    aria-controls="mobile-navigation"
+                >
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <div
+                    class="mobile-navigation"
+                    id="mobile-navigation"
+                    aria-hidden="true"
+                >
+                    <div class="mobile-navigation-links">
+                        <a href="#about">About</a>
+                        <a href="#menu">Menu</a>
+                        <a href="#experience">Experience</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+
+                    <button
+                        class="mobile-reserve reservation-trigger"
+                        type="button"
+                    >
+                        Reserve a Table
+                    </button>
+                </div>
+            </nav>
+
+            <div class="hero-content">
+                <p>FINE DINING · LUXEMBOURG</p>
+
+                <h1>
+                    An evening<br>
+                    to remember.
+                </h1>
+
+                <span>
+                    Contemporary cuisine shaped by season,
+                    craft and simplicity.
+                </span>
+            </div>
+        </section>
+
+        <section class="about" id="about">
+            <div class="about-number">01</div>
+
+            <div class="about-heading">
+                <p>THE RESTAURANT</p>
+
+                <h2>
+                    Simplicity.<br>
+                    Refined.
+                </h2>
+            </div>
+
+            <div class="about-text">
+                <p>
+                    Maison Aurelia is a contemporary dining experience
+                    where seasonal ingredients, precise technique and
+                    timeless hospitality come together.
+                </p>
+
+                <a href="#menu">Discover our story →</a>
+            </div>
+        </section>
+
+        <section class="menu-section" id="menu">
+            <div class="menu-image">
+                <div class="menu-image-inner"></div>
+            </div>
+
+            <div class="menu-content">
+                <span class="section-index">02</span>
+                <p class="section-label">SIGNATURE MENU</p>
+
+                <h2>
+                    Crafted around<br>
+                    the season.
+                </h2>
+
+                <div class="dish-list">
+                    <div
+                        class="dish"
+                        data-image="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1600&q=90"
+                    >
+                        <div>
+                            <h3>Atlantic Turbot</h3>
+                            <p>Leek · beurre blanc · caviar</p>
+                        </div>
+
+                        <span>42 €</span>
+                    </div>
+
+                    <div
+                        class="dish"
+                        data-image="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1600&q=90"
+                    >
+                        <div>
+                            <h3>Dry Aged Beef</h3>
+                            <p>Shallot · black garlic · jus</p>
+                        </div>
+
+                        <span>48 €</span>
+                    </div>
+
+                    <div
+                        class="dish"
+                        data-image="https://images.unsplash.com/photo-1505253716362-afaea1d3d1af?auto=format&fit=crop&w=1600&q=90"
+                    >
+                        <div>
+                            <h3>White Asparagus</h3>
+                            <p>Hazelnut · morel · vin jaune</p>
+                        </div>
+
+                        <span>34 €</span>
+                    </div>
+                </div>
+
+                <a href="#" class="menu-link">Explore the menu →</a>
+            </div>
+        </section>
+
+        <section class="experience" id="experience">
+            <div class="experience-image"></div>
+
+            <div class="experience-caption">
+                <span>03</span>
+                <p>A quiet space. An unforgettable evening.</p>
+            </div>
+        </section>
+
+        <section class="reservation" id="reservation">
+            <div class="reservation-intro">
+                <span>04</span>
+                <p>RESERVATIONS</p>
+            </div>
+
+            <div class="reservation-content">
+                <h2>
+                    Your table<br>
+                    is waiting.
+                </h2>
+
+                <p>
+                    Join us for an evening shaped by seasonal cuisine,
+                    thoughtful service and quiet elegance.
+                </p>
+
+                <button
+                    class="reservation-text-button reservation-trigger"
+                    type="button"
+                >
+                    Reserve a table
+                </button>
+            </div>
+
+            <div class="reservation-details">
+                <div>
+                    <span>DINNER</span>
+                    <p>Tuesday — Sunday</p>
+                    <p>18:30 — 23:00</p>
+                </div>
+
+                <div>
+                    <span>LOCATION</span>
+                    <p>24 Rue du Marché</p>
+                    <p>Luxembourg City</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer" id="contact">
+            <div class="footer-top">
+                <p>MAISON AURELIA</p>
+
+                <h2>
+                    See you<br>
+                    this evening.
+                </h2>
+
+                <button
+                    class="footer-reservation-button reservation-trigger"
+                    type="button"
+                >
+                    Reserve a table
+                </button>
+            </div>
+
+            <div class="footer-bottom">
+                <div>
+                    <span>VISIT</span>
+                    <p>24 Rue du Marché</p>
+                    <p>Luxembourg City</p>
+                </div>
+
+                <div>
+                    <span>CONTACT</span>
+                    <p>+352 26 00 00 00</p>
+                    <p>hello@maisonaurelia.lu</p>
+                </div>
+
+                <div>
+                    <span>FOLLOW</span>
+                    <p>Instagram</p>
+                    <p>Facebook</p>
+                </div>
+
+                <p class="footer-year">© 2026 Maison Aurelia</p>
+            </div>
+        </footer>
+    </main>
+
+    <div
+        class="reservation-modal"
+        id="reservation-modal"
+        aria-hidden="true"
+    >
+        <div
+            class="reservation-modal-backdrop"
+            data-close-reservation
+        ></div>
+
+        <div
+            class="reservation-modal-panel"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="reservation-modal-title"
+        >
+            <button
+                class="reservation-modal-close"
+                type="button"
+                aria-label="Close reservation"
+                data-close-reservation
+            >
+                ×
+            </button>
+
+            <div class="reservation-modal-heading">
+                <span>MAISON AURELIA</span>
+                <p>RESERVATIONS</p>
+
+                <h2 id="reservation-modal-title">
+                    Join us<br>
+                    for dinner.
+                </h2>
+            </div>
+
+            <form class="reservation-form" id="reservation-form">
+                <div class="reservation-field">
+                    <label for="reservation-name">Name</label>
+
+                    <input
+                        id="reservation-name"
+                        name="name"
+                        type="text"
+                        autocomplete="name"
+                        required
+                    >
+                </div>
+
+                <div class="reservation-field">
+                    <label for="reservation-email">Email</label>
+
+                    <input
+                        id="reservation-email"
+                        name="email"
+                        type="email"
+                        autocomplete="email"
+                        required
+                    >
+                </div>
+
+                <div class="reservation-form-row">
+                    <div class="reservation-field">
+                        <label for="reservation-date">Date</label>
+
+                        <input
+                            id="reservation-date"
+                            name="date"
+                            type="date"
+                            required
+                        >
+                    </div>
+
+                    <div class="reservation-field">
+                        <label for="reservation-time">Time</label>
+
+                        <select
+                            id="reservation-time"
+                            name="time"
+                            required
+                        >
+                            <option value="">Select time</option>
+                            <option value="18:30">18:30</option>
+                            <option value="19:00">19:00</option>
+                            <option value="19:30">19:30</option>
+                            <option value="20:00">20:00</option>
+                            <option value="20:30">20:30</option>
+                            <option value="21:00">21:00</option>
+                            <option value="21:30">21:30</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="reservation-field">
+                    <label for="reservation-guests">Guests</label>
+
+                    <select
+                        id="reservation-guests"
+                        name="guests"
+                        required
+                    >
+                        <option value="">Number of guests</option>
+                        <option value="1">1 guest</option>
+                        <option value="2">2 guests</option>
+                        <option value="3">3 guests</option>
+                        <option value="4">4 guests</option>
+                        <option value="5">5 guests</option>
+                        <option value="6">6 guests</option>
+                        <option value="7">7 guests</option>
+                        <option value="8">8 guests</option>
+                    </select>
+                </div>
+
+                <button class="reservation-submit" type="submit">
+                    Request a table
+                </button>
+
+                <p class="reservation-form-note">
+                    This portfolio demo does not create a real reservation.
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

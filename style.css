@@ -1,0 +1,1222 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #0a0a0a;
+    color: #f3efe7;
+    font-family: "Montserrat", sans-serif;
+    overflow: hidden;
+}
+
+#intro {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #080808;
+}
+
+.intro-content {
+    text-align: center;
+}
+
+.intro-small {
+    margin-bottom: 20px;
+    font-size: 10px;
+    letter-spacing: 7px;
+    opacity: 0;
+}
+
+.intro-title {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(45px, 8vw, 110px);
+    font-weight: 300;
+    letter-spacing: 8px;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.intro-line {
+    width: 0;
+    height: 1px;
+    margin: 25px auto;
+    background: #bca77d;
+}
+
+.intro-location {
+    font-size: 9px;
+    letter-spacing: 6px;
+    opacity: 0;
+}
+
+.restaurant-sketch {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    pointer-events: none;
+}
+
+.restaurant-sketch svg {
+    width: min(80vw, 1000px);
+    opacity: 0.28;
+}
+
+.building-lines path {
+    fill: none;
+    stroke: #bca77d;
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+    stroke-dasharray: 1200;
+    stroke-dashoffset: 1200;
+}
+
+#website {
+    width: 100%;
+    overflow-x: hidden;
+    opacity: 0;
+    transform: scale(1.035);
+    filter: blur(6px);
+    transition:
+        opacity 1200ms ease,
+        transform 1800ms cubic-bezier(.16, 1, .3, 1),
+        filter 1400ms ease;
+}
+
+#website.is-ready {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+}
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 0, 0, .80),
+            rgba(0, 0, 0, .25)
+        ),
+        url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=2000&q=90");
+    background-position: center;
+    background-size: cover;
+    will-change: background-position;
+}
+
+nav {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    padding: 35px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+    letter-spacing: 4px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+.nav-links a {
+    color: #eee;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: opacity .3s ease;
+}
+
+.nav-links a:hover {
+    opacity: .5;
+}
+
+.reserve-btn {
+    padding: 14px 22px;
+    border: 1px solid rgba(255, 255, 255, .4);
+    background: transparent;
+    color: #eee;
+    font-family: "Montserrat", sans-serif;
+    font-size: 9px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition:
+        background 300ms ease,
+        color 300ms ease;
+}
+
+.reserve-btn:hover {
+    background: #eee;
+    color: #111;
+}
+
+.mobile-menu-toggle,
+.mobile-navigation {
+    display: none;
+}
+
+.hero-content {
+    position: absolute;
+    left: 8%;
+    bottom: 14%;
+    max-width: 850px;
+}
+
+.hero-content > p {
+    margin-bottom: 25px;
+    color: #c8b58b;
+    font-size: 10px;
+    letter-spacing: 5px;
+}
+
+.hero-content h1 {
+    margin-bottom: 35px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(65px, 9vw, 135px);
+    font-weight: 300;
+    line-height: .82;
+    letter-spacing: -3px;
+}
+
+.hero-content span {
+    display: block;
+    max-width: 470px;
+    color: rgba(255, 255, 255, .72);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.about {
+    min-height: 85vh;
+    padding: 140px 8%;
+    display: grid;
+    grid-template-columns: .4fr 1.4fr 1fr;
+    gap: 60px;
+    align-items: center;
+    background: #f0ece3;
+    color: #161616;
+}
+
+.about-number {
+    align-self: start;
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.about-heading > p {
+    margin-bottom: 35px;
+    font-size: 9px;
+    letter-spacing: 5px;
+}
+
+.about-heading h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(65px, 8vw, 120px);
+    font-weight: 300;
+    line-height: .82;
+    letter-spacing: -3px;
+}
+
+.about-text {
+    max-width: 390px;
+}
+
+.about-text p {
+    margin-bottom: 40px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 23px;
+    line-height: 1.55;
+}
+
+.about-text a {
+    padding-bottom: 8px;
+    border-bottom: 1px solid #161616;
+    color: #161616;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.menu-section {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    background: #111;
+}
+
+.menu-image {
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.menu-image-inner {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    background:
+        url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1600&q=90")
+        center / cover no-repeat;
+    transform: scale(1.08);
+    transition:
+        transform 900ms cubic-bezier(.16, 1, .3, 1),
+        opacity 300ms ease;
+}
+
+.menu-content {
+    padding: 10vh 9%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.section-index,
+.section-label {
+    color: #bca77d;
+    font-size: 9px;
+    letter-spacing: 4px;
+}
+
+.section-label {
+    margin-top: 45px;
+}
+
+.menu-content h2 {
+    margin: 25px 0 60px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(55px, 6vw, 90px);
+    font-weight: 300;
+    line-height: .9;
+}
+
+.dish {
+    padding: 22px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid rgba(255, 255, 255, .14);
+    cursor: pointer;
+    transition:
+        padding 500ms cubic-bezier(.16, 1, .3, 1),
+        border-color 500ms ease;
+}
+
+.dish:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, .14);
+}
+
+.dish h3 {
+    margin-bottom: 6px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 25px;
+    font-weight: 400;
+}
+
+.dish p,
+.dish > span {
+    color: rgba(255, 255, 255, .5);
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.dish h3,
+.dish p,
+.dish > span {
+    transition:
+        transform 500ms cubic-bezier(.16, 1, .3, 1),
+        color 400ms ease;
+}
+
+.menu-link {
+    width: fit-content;
+    margin-top: 45px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, .6);
+    color: #f3efe7;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.menu-section.is-visible .menu-image-inner {
+    transform: scale(1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .dish:hover {
+        padding-left: 12px;
+        padding-right: 12px;
+        border-color: rgba(188, 167, 125, .65);
+    }
+
+    .dish:hover h3,
+    .dish:hover p {
+        transform: translateX(8px);
+    }
+
+    .dish:hover > span {
+        color: #bca77d;
+        transform: translateX(-8px);
+    }
+
+    .dish:hover p {
+        color: rgba(255, 255, 255, .75);
+    }
+}
+
+.experience {
+    padding: 10vh 8% 15vh;
+    background: #0a0a0a;
+}
+
+.experience-image {
+    width: 100%;
+    height: 75vh;
+    background:
+        url("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=2000&q=90")
+        center / cover no-repeat;
+    will-change: background-position;
+}
+
+.experience-caption {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    color: rgba(255, 255, 255, .55);
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.about-number,
+.about-heading,
+.about-text,
+.menu-content,
+.dish,
+.experience-image,
+.experience-caption {
+    opacity: 0;
+    transform: translateY(45px);
+    transition:
+        opacity 900ms ease,
+        transform 1100ms cubic-bezier(.16, 1, .3, 1);
+}
+
+.about-heading {
+    transition-delay: 100ms;
+}
+
+.about-text {
+    transition-delay: 200ms;
+}
+
+.experience-caption {
+    transition-delay: 100ms;
+}
+
+.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reservation {
+    min-height: 100vh;
+    padding: 120px 8%;
+    display: grid;
+    grid-template-columns: .5fr 1.5fr .8fr;
+    gap: 70px;
+    align-items: center;
+    background: #e7dfd1;
+    color: #151515;
+}
+
+.reservation-intro {
+    align-self: start;
+}
+
+.reservation-intro span,
+.reservation-intro p {
+    font-size: 9px;
+    letter-spacing: 4px;
+}
+
+.reservation-intro p {
+    margin-top: 25px;
+}
+
+.reservation-content h2 {
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(70px, 8vw, 125px);
+    font-weight: 300;
+    line-height: .82;
+    letter-spacing: -3px;
+}
+
+.reservation-content > p {
+    max-width: 430px;
+    margin: 45px 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 22px;
+    line-height: 1.55;
+}
+
+.reservation-details {
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
+}
+
+.reservation-details span {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 9px;
+    letter-spacing: 3px;
+}
+
+.reservation-details p {
+    margin-bottom: 5px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 19px;
+}
+
+.reservation-text-button,
+.footer-reservation-button {
+    width: fit-content;
+    padding: 0 0 9px;
+    border: 0;
+    border-bottom: 1px solid currentColor;
+    background: transparent;
+    font-family: "Montserrat", sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.reservation-text-button {
+    color: #151515;
+}
+
+.footer {
+    min-height: 90vh;
+    padding: 110px 8% 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #090909;
+    color: #f3efe7;
+}
+
+.footer-top > p {
+    margin-bottom: 45px;
+    color: #bca77d;
+    font-size: 9px;
+    letter-spacing: 5px;
+}
+
+.footer-top h2 {
+    max-width: 900px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(80px, 11vw, 170px);
+    font-weight: 300;
+    line-height: .78;
+    letter-spacing: -5px;
+}
+
+.footer-reservation-button {
+    margin-top: 55px;
+    color: #f3efe7;
+}
+
+.footer-bottom {
+    padding-top: 45px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) auto;
+    gap: 50px;
+    align-items: end;
+    border-top: 1px solid rgba(255, 255, 255, .14);
+}
+
+.footer-bottom span {
+    display: block;
+    margin-bottom: 14px;
+    color: rgba(255, 255, 255, .45);
+    font-size: 8px;
+    letter-spacing: 3px;
+}
+
+.footer-bottom p {
+    margin-top: 5px;
+    color: rgba(255, 255, 255, .75);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 16px;
+}
+
+.footer-year {
+    font-family: "Montserrat", sans-serif !important;
+    font-size: 8px !important;
+    letter-spacing: 2px;
+}
+
+.reservation-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    visibility: hidden;
+    opacity: 0;
+    transition:
+        opacity 500ms ease,
+        visibility 500ms ease;
+}
+
+.reservation-modal.is-open {
+    visibility: visible;
+    opacity: 1;
+}
+
+.reservation-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(5, 5, 5, .82);
+    backdrop-filter: blur(10px);
+}
+
+.reservation-modal-panel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: min(620px, 100%);
+    height: 100%;
+    padding: 70px 65px;
+    overflow-y: auto;
+    background: #e7dfd1;
+    color: #151515;
+    transform: translateX(100%);
+    transition: transform 800ms cubic-bezier(.16, 1, .3, 1);
+}
+
+.reservation-modal.is-open .reservation-modal-panel {
+    transform: translateX(0);
+}
+
+.reservation-modal-close {
+    position: absolute;
+    top: 30px;
+    right: 35px;
+    border: 0;
+    background: transparent;
+    color: #151515;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 1;
+    cursor: pointer;
+    transition: transform 300ms ease;
+}
+
+.reservation-modal-close:hover {
+    transform: rotate(90deg);
+}
+
+.reservation-modal-heading {
+    margin-bottom: 60px;
+}
+
+.reservation-modal-heading > span,
+.reservation-modal-heading > p {
+    font-size: 9px;
+    letter-spacing: 4px;
+}
+
+.reservation-modal-heading > p {
+    margin-top: 18px;
+    color: rgba(21, 21, 21, .55);
+}
+
+.reservation-modal-heading h2 {
+    margin-top: 35px;
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(60px, 6vw, 90px);
+    font-weight: 300;
+    line-height: .85;
+    letter-spacing: -3px;
+}
+
+.reservation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.reservation-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.reservation-field {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.reservation-field label {
+    font-size: 8px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.reservation-field input,
+.reservation-field select {
+    width: 100%;
+    padding: 13px 0;
+    border: 0;
+    border-bottom: 1px solid rgba(21, 21, 21, .35);
+    border-radius: 0;
+    outline: none;
+    background: transparent;
+    color: #151515;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 20px;
+}
+
+.reservation-field input:focus,
+.reservation-field select:focus {
+    border-color: #151515;
+}
+
+.reservation-submit {
+    margin-top: 15px;
+    padding: 18px 25px;
+    border: 1px solid #151515;
+    background: #151515;
+    color: #f3efe7;
+    font-family: "Montserrat", sans-serif;
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition:
+        background 300ms ease,
+        color 300ms ease;
+}
+
+.reservation-submit:hover {
+    background: transparent;
+    color: #151515;
+}
+
+.reservation-form-note {
+    color: rgba(21, 21, 21, .55);
+    font-family: "Cormorant Garamond", serif;
+    font-size: 15px;
+}
+
+@media (max-width: 1000px) {
+    nav {
+        padding: 28px 5%;
+    }
+
+    .nav-links {
+        gap: 22px;
+    }
+
+    .hero-content {
+        left: 6%;
+        right: 6%;
+    }
+
+    .about {
+        padding: 110px 6%;
+        grid-template-columns: .25fr 1fr;
+        gap: 45px;
+    }
+
+    .about-text {
+        grid-column: 2;
+        max-width: 520px;
+    }
+
+    .menu-section {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .menu-content {
+        padding: 8vh 7%;
+    }
+
+    .reservation {
+        padding: 100px 6%;
+        grid-template-columns: .3fr 1.3fr;
+        gap: 50px;
+    }
+
+    .reservation-details {
+        grid-column: 2;
+        flex-direction: row;
+        gap: 80px;
+    }
+
+    .footer {
+        padding-left: 6%;
+        padding-right: 6%;
+    }
+
+    .footer-bottom {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer-year {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 800px) {
+    nav {
+        position: relative;
+        z-index: 100;
+        padding: 24px;
+    }
+
+    .nav-links,
+    .reserve-btn {
+        display: none;
+    }
+
+    .logo {
+        position: relative;
+        z-index: 102;
+        font-size: 16px;
+        letter-spacing: 3px;
+    }
+
+    .mobile-menu-toggle {
+        position: relative;
+        z-index: 102;
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        border: 1px solid rgba(255, 255, 255, .4);
+        background: rgba(0, 0, 0, .12);
+        cursor: pointer;
+    }
+
+    .mobile-menu-toggle span {
+        width: 18px;
+        height: 1px;
+        background: #f3efe7;
+        transition:
+            transform 450ms cubic-bezier(.16, 1, .3, 1),
+            opacity 250ms ease;
+    }
+
+    .mobile-menu-toggle.is-open span:first-child {
+        transform: translateY(4px) rotate(45deg);
+    }
+
+    .mobile-menu-toggle.is-open span:last-child {
+        transform: translateY(-4px) rotate(-45deg);
+    }
+
+    .mobile-navigation {
+        position: fixed;
+        inset: 0;
+        z-index: 101;
+        padding: 120px 24px 45px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background: rgba(8, 8, 8, .98);
+        visibility: hidden;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-18px);
+        transition:
+            opacity 450ms ease,
+            visibility 450ms ease,
+            transform 650ms cubic-bezier(.16, 1, .3, 1);
+    }
+
+    .mobile-navigation.is-open {
+        visibility: visible;
+        opacity: 1;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .mobile-navigation-links {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .mobile-navigation-links a {
+        padding: 18px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, .14);
+        color: #f3efe7;
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(48px, 14vw, 72px);
+        font-weight: 300;
+        line-height: .95;
+        text-decoration: none;
+    }
+
+    .mobile-reserve {
+        width: 100%;
+        padding: 17px 20px;
+        border: 1px solid rgba(255, 255, 255, .45);
+        background: transparent;
+        color: #f3efe7;
+        font-family: "Montserrat", sans-serif;
+        font-size: 9px;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+
+    .hero {
+        min-height: 100svh;
+        background-position: 58% center;
+    }
+
+    .hero-content {
+        left: 24px;
+        right: 24px;
+        bottom: 10%;
+    }
+
+    .hero-content > p {
+        margin-bottom: 18px;
+        font-size: 8px;
+        letter-spacing: 3px;
+    }
+
+    .hero-content h1 {
+        margin-bottom: 25px;
+        font-size: clamp(55px, 17vw, 85px);
+        line-height: .88;
+        letter-spacing: -2px;
+    }
+
+    .hero-content span {
+        max-width: 340px;
+        font-size: 18px;
+        line-height: 1.45;
+    }
+
+    .about {
+        min-height: auto;
+        padding: 100px 24px;
+        display: block;
+    }
+
+    .about-number {
+        margin-bottom: 55px;
+    }
+
+    .about-heading > p {
+        margin-bottom: 25px;
+    }
+
+    .about-heading h2 {
+        font-size: clamp(60px, 18vw, 90px);
+        line-height: .88;
+    }
+
+    .about-text {
+        max-width: 100%;
+        margin-top: 55px;
+    }
+
+    .about-text p {
+        font-size: 21px;
+    }
+
+    .menu-section {
+        min-height: 100svh;
+        display: grid;
+        grid-template-columns: minmax(0, .82fr) minmax(0, 1.18fr);
+        align-items: stretch;
+    }
+
+    .menu-image {
+        position: relative;
+        min-height: 100%;
+        height: 100%;
+    }
+
+    .menu-image-inner {
+        position: absolute;
+        inset: 0;
+        min-height: 100%;
+        height: 100%;
+        background-position: center;
+    }
+
+    .menu-content {
+        min-width: 0;
+        padding: 68px 18px 72px;
+    }
+
+    .section-index,
+    .section-label {
+        font-size: 7px;
+        letter-spacing: 2.5px;
+    }
+
+    .section-label {
+        margin-top: 22px;
+    }
+
+    .menu-content h2 {
+        margin: 18px 0 34px;
+        font-size: clamp(38px, 10vw, 56px);
+        line-height: .9;
+        letter-spacing: -1.5px;
+    }
+
+    .dish {
+        gap: 10px;
+        padding: 18px 0;
+    }
+
+    .dish h3 {
+        font-size: clamp(18px, 5vw, 23px);
+        line-height: 1;
+    }
+
+    .dish p {
+        padding-right: 0;
+        font-size: 7px;
+        line-height: 1.45;
+    }
+
+    .dish > span {
+        flex: 0 0 auto;
+        font-size: 8px;
+    }
+
+    .menu-link {
+        margin-top: 32px;
+        font-size: 7px;
+        letter-spacing: 2px;
+    }
+
+    .experience {
+        padding: 60px 24px 72px;
+    }
+
+    .experience-image {
+        height: 58vh;
+        background-position: center;
+    }
+
+    .experience-caption {
+        gap: 30px;
+        line-height: 1.5;
+    }
+
+    .experience-caption p {
+        text-align: right;
+    }
+
+    .reservation {
+        width: 100%;
+        min-height: auto;
+        padding: 90px 24px;
+        display: block;
+        overflow: hidden;
+    }
+
+    .reservation-intro {
+        margin-bottom: 52px;
+    }
+
+    .reservation-content {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .reservation-content h2 {
+        max-width: 100%;
+        font-size: clamp(58px, 16vw, 82px);
+        line-height: .88;
+        letter-spacing: -2px;
+    }
+
+    .reservation-content > p {
+        margin: 40px 0;
+        font-size: 20px;
+    }
+
+    .reservation-details {
+        margin-top: 80px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 35px;
+    }
+
+    .reservation-details p {
+        font-size: 17px;
+    }
+
+    .footer {
+        min-height: 100svh;
+        padding: 90px 24px 35px;
+    }
+
+    .footer-top h2 {
+        font-size: clamp(70px, 20vw, 105px);
+        line-height: .82;
+        letter-spacing: -3px;
+    }
+
+    .footer-bottom {
+        margin-top: 100px;
+        padding-top: 35px;
+        grid-template-columns: 1fr 1fr;
+        gap: 45px 25px;
+    }
+
+    .footer-year {
+        grid-column: 1 / -1;
+    }
+
+    .restaurant-sketch svg {
+        width: 95vw;
+    }
+
+    .intro-title {
+        padding: 0 20px;
+        font-size: clamp(42px, 13vw, 75px);
+        letter-spacing: 4px;
+    }
+}
+
+@media (max-width: 600px) {
+    .reservation-modal-panel {
+        width: 100%;
+        padding: 80px 24px 45px;
+    }
+
+    .reservation-modal-close {
+        top: 24px;
+        right: 24px;
+    }
+
+    .reservation-modal-heading {
+        margin-bottom: 45px;
+    }
+
+    .reservation-modal-heading h2 {
+        font-size: clamp(58px, 18vw, 82px);
+    }
+
+    .reservation-form-row {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 500px) {
+    nav {
+        padding: 20px;
+    }
+
+    .logo {
+        max-width: 130px;
+        font-size: 14px;
+        line-height: 1.1;
+    }
+
+    .hero-content {
+        left: 20px;
+        right: 20px;
+    }
+
+    .about,
+    .reservation {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .menu-section {
+        grid-template-columns: minmax(0, .72fr) minmax(0, 1.28fr);
+    }
+
+    .menu-content {
+        padding: 58px 14px 62px;
+    }
+
+    .menu-content h2 {
+        font-size: clamp(34px, 9.5vw, 46px);
+    }
+
+    .dish h3 {
+        font-size: 18px;
+    }
+
+    .dish p {
+        font-size: 6.5px;
+    }
+
+    .dish > span {
+        font-size: 7px;
+    }
+
+    .experience {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .experience-image {
+        height: 50vh;
+    }
+
+    .reservation-content h2 {
+        font-size: clamp(54px, 15vw, 72px);
+    }
+
+    .reservation-details {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .footer {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .footer-bottom {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-year {
+        grid-column: auto;
+    }
+}
